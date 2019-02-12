@@ -8,8 +8,8 @@
 import edu.duke.*;
 
 public class part4 {
-    public String readUrl(String link){
-        String string = "youtube.com", urlList = "";
+    public void readUrl(String link){
+        String string = "youtube.com";
         int beginningUrl, endUrl;
         URLResource url = new URLResource(link);
         for(String w : url.words()){
@@ -18,18 +18,14 @@ public class part4 {
                // finding the double quotes
                beginningUrl  = w.indexOf("\"");
                endUrl = w.lastIndexOf("\"");
-               urlList += "\n"+w.substring(beginningUrl+1,endUrl);              
+               System.out.println(w.substring(beginningUrl+1,endUrl));          
                
             }
-        
-        }
-        return urlList;
-    
+        }    
     }
     public static void main(String[] args){
         part4 p = new part4();
-        System.out.println(
-        p.readUrl("http://www.dukelearntoprogram.com/course2/data/manylinks.html"));
+        p.readUrl("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
     }
 
 }
